@@ -1,38 +1,105 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.company-list {
+  display: flex;
+}
+
+.company-list-item {
+  border-right: solid 1px black;
+  overflow-x: hidden;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-list-item:first-of-type {
+  border-left: none;
+}
+
+.company-list-item:last-of-type {
+  border-right: none;
+}
+
+.company-list-item-info:hover,
+.company-list-item--active .company-list-item-info,
+.body--focusable .company-list-item-info:focus {
+  background: black;
   color: white;
+  border-left: solid 1px black;
 }
 
-.App-link {
-  color: #61dafb;
+.company-list-item-info {
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  height: calc(100vh - 60px);
+  padding: 20px 0 20px 0;
+  font-size: 3vw;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  background: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.company-list-item:not(.company-list-item--inactive)
+  .company-list-item-info:hover
+  .company-list-item-info-name,
+.company-list-item--active .company-list-item-info-name {
+  margin-top: 40px;
+}
+
+.company-list-item-info-name {
+  position: absolute;
+  top: 20px;
+  /* right: 1.8vw; */
+  right: 2.8vw;
+  right: 3.3vw;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.company-list-item-info-name,
+.company-list-item--active .companys-list-item-info-name {
+  font-size: 6vw;
+  right: initial;
+  left: 20px;
+  margin-top: 0 !important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.companys-list-item-info-name span.small {
+  /* margin-top: 2.1vw; */
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+.brands-list-item-info-location {
+  /* margin-left: auto; */
+  position: absolute;
+  bottom: 20px;
+  /* right: 1.8vw; */
+  /* right: 2.8vw; */
+  right: 3.3vw;
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.companys-list-item-content {
+  position: static;
+  width: 100vw !important;
+  border-left: none;
+  border-top: solid 1px var(--black);
+}
+
+.companys-list-item-content-link {
+  background: var(--black);
+  color: var(--white);
+}
+
+.companys-list-item--active {
+  height: auto;
+  min-height: calc(100vh - 60px - 200px);
 }

@@ -4,14 +4,27 @@ import ListItem from './components/ListItem';
 
 function App() {
   const [people, setPeople] = React.useState([]);
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then((res) => res.json())
-    .then((data) => setPeople(data));
+
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => {
+        data.sort((a, b) => {
+          return a.company.name
+            .toUpperCase()
+            .localeCompare(b.company.name.toUpperCase());
+        });
+        setPeople(data);
+      });
+  }, []);
+
   return (
     <div className="App">
-      {people.map((person) => {
-        return <ListItem person={person} />;
-      })}
+      <div class="company-list">
+        {people.map((person) => {
+          return <ListItem person={person} />;
+        })}
+      </div>
     </div>
   );
 }
