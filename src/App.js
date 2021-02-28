@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import ListItem from './components/ListItem';
-// const brandbtns = document.querySelectorAll('.company-list-item-info');
 
 function App() {
   const [people, setPeople] = React.useState([]);
@@ -22,6 +21,32 @@ function App() {
 
   return (
     <body className="body--home">
+      <button
+        onClick={() => {
+          const alphabetical = [...people];
+          alphabetical.sort((a, b) => {
+            return a.company.name
+              .toUpperCase()
+              .localeCompare(b.company.name.toUpperCase());
+          });
+          setPeople(alphabetical);
+        }}
+      >
+        A-Z
+      </button>
+      <button
+        onClick={() => {
+          const reverseAlphabetical = [...people];
+          reverseAlphabetical.sort((a, b) => {
+            return b.company.name
+              .toUpperCase()
+              .localeCompare(a.company.name.toUpperCase());
+          });
+          setPeople(reverseAlphabetical);
+        }}
+      >
+        Z-A
+      </button>
       <section class="section company" id="company">
         <div class="company-list">
           {people.map((person) => {
