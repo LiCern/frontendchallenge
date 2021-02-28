@@ -36,6 +36,19 @@ body {
 .text-uppercase {
   text-transform: uppercase;
 }
+
+.text-m {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.text-m p {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
 .company-list {
   display: flex;
 }
@@ -70,7 +83,7 @@ body {
   text-orientation: mixed;
   height: calc(100vh - 60px);
   padding: 20px 0 20px 0;
-  font-size: 3vw;
+  font-size: 2.5vw;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -112,7 +125,7 @@ body {
 } */
 
 .company-list-item-info-location {
-  padding-top: 70vh;
+  padding-top: 60vh;
   font-size: 2vw;
 }
 
@@ -126,7 +139,18 @@ body {
   overflow: auto;
 }
 
-.company-list-item-content-main-images {
+/* .company-list-item-content {
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  border-left: solid 1px var(--black);
+  height: 100%;
+  overflow: hidden;
+  background: var(--white);
+  font-weight: 400;
+} */
+
+/* .company-list-item-content-main-images {
   width: 100%;
   border-bottom: solid 1px var(--black);
   display: flex;
@@ -140,9 +164,9 @@ body {
   background-position: center center;
 }
 
-.company-list-item-content-main-images div + div {
+.company-list-item-content-main-images div + img {
   border-right: none;
-}
+} */
 
 .company-list-item-content-main-text {
   padding: 20px 20px 40px 20px;
@@ -164,7 +188,7 @@ body {
 }
 
 .company-list-item-content-link:after {
-  content: ' â†—';
+  content: '↗';
   display: inline-block;
   font-family: 'Roboto Mono';
   font-size: 2em;
@@ -173,7 +197,13 @@ body {
   margin-left: 10px;
 }
 
+.company-list-item--inactive {
+  width: calc(30vw / 8);
+  /* Somehow the right border gets overwritten at some point, why?  */
+}
+
 .company-list-item--active {
+  width: 70vw;
 }
 
 .company-list-item--active .company-list-item-info {
@@ -183,10 +213,8 @@ body {
   display: block;
 }
 
-.company-list-item--inactive {
-}
-
 .company-list-item--inactive:hover {
+  /* put the color here */
 }
 
 .company-list-item--inactive .company-list-item-info {
