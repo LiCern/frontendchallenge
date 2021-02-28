@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
 import ListItem from './components/ListItem';
-const brandbtns = document.querySelectorAll('.company-list-item-info');
+// const brandbtns = document.querySelectorAll('.company-list-item-info');
 
 function App() {
   const [people, setPeople] = React.useState([]);
+  const [quantityActive, setQuantityActive] = React.useState(0);
 
   React.useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -24,7 +25,13 @@ function App() {
       <section class="section company" id="company">
         <div class="company-list">
           {people.map((person) => {
-            return <ListItem person={person} />;
+            return (
+              <ListItem
+                person={person}
+                quantityActive={quantityActive}
+                setQuantityActive={setQuantityActive}
+              />
+            );
           })}
         </div>
       </section>
