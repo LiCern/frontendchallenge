@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import ListItem from './components/ListItem';
+const brandbtns = document.querySelectorAll('.company-list-item-info');
 
 function App() {
   const [people, setPeople] = React.useState([]);
@@ -19,13 +20,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <div class="company-list">
-        {people.map((person) => {
-          return <ListItem person={person} />;
-        })}
-      </div>
-    </div>
+    <body className="body--home">
+      <section class="section company" id="company">
+        <div class="company-list">
+          {people.map((person) => {
+            return <ListItem person={person} />;
+          })}
+        </div>
+      </section>
+    </body>
   );
 }
 

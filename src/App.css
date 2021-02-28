@@ -1,5 +1,37 @@
-.App {
-  display: flex;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+html {
+  font-size: 100%;
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  --white: #fff;
+  --black: #000;
+  color: var(--black);
+  background: var(--white);
+}
+
+.section:first-of-type {
+  margin-top: 60px;
+}
+
+.section {
+  min-height: calc(100vh - 60px);
+  display: block;
+  /* height: auto; */
+  border-bottom: solid 1px var(--black);
+  /* scroll-snap-align: start; */
+  /* position: relative; */
+  /* background: var(--white); */
+  scroll-margin-top: 60px;
 }
 .text-uppercase {
   text-transform: uppercase;
@@ -17,6 +49,7 @@
 
 .company-list-item:first-of-type {
   border-left: none;
+  margin-left: 1vw;
 }
 
 .company-list-item:last-of-type {
@@ -43,63 +76,141 @@
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   background: white;
+  width: calc(100vw / 10);
 }
 
 .company-list-item:not(.company-list-item--inactive)
   .company-list-item-info:hover
   .company-list-item-info-name,
 .company-list-item--active .company-list-item-info-name {
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .company-list-item-info-name {
   position: absolute;
-  top: 20px;
-  /* right: 1.8vw; */
-  right: 2.8vw;
+  top: 2vh;
   right: 3.3vw;
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.company-list-item-info-name,
-.company-list-item--active .companys-list-item-info-name {
-  font-size: 6vw;
+/* don't think need this */
+/* .company-list-item-info-name,
+.company-list-item--active .company-list-item-info-name {
+  font-size: 3vw;
   right: initial;
   left: 20px;
   margin-top: 0 !important;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
-.companys-list-item-info-name span.small {
-  /* margin-top: 2.1vw; */
+/*  don't think need this */
+/* .company-list-item-info-name span.small {
+  margin-top: 8vw;
   margin-top: 16px;
   margin-left: 8px;
+} */
+
+.company-list-item-info-location {
+  padding-top: 70vh;
+  font-size: 2vw;
 }
 
-.brands-list-item-info-location {
-  /* margin-left: auto; */
-  position: absolute;
-  bottom: 20px;
-  /* right: 1.8vw; */
-  /* right: 2.8vw; */
-  right: 3.3vw;
+.company-list-item-info-name,
+.company-list-item-info-location {
+  font-weight: 500;
+}
+
+.company-list-item-content-main {
+  height: calc(100% - 60px);
+  overflow: auto;
+}
+
+.company-list-item-content-main-images {
+  width: 100%;
+  border-bottom: solid 1px var(--black);
+  display: flex;
+}
+
+.company-list-item-content-main-images div {
+  height: 50vh;
+  width: 50%;
+  border-right: solid 1px var(--black);
+  background-size: cover;
+  background-position: center center;
+}
+
+.company-list-item-content-main-images div + div {
+  border-right: none;
+}
+
+.company-list-item-content-main-text {
+  padding: 20px 20px 40px 20px;
+}
+
+.company-list-item-content-link {
+  padding: 0 20px;
+  border-top: solid 1px var(--black);
+  background: var(--white);
+  display: block;
+  height: 60px;
+  line-height: 60px;
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.companys-list-item-content {
+.company-list-item-content-link:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.company-list-item-content-link:after {
+  content: ' â†—';
+  display: inline-block;
+  font-family: 'Roboto Mono';
+  font-size: 2em;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.company-list-item--active {
+}
+
+.company-list-item--active .company-list-item-info {
+}
+
+.company-list-item--active .company-list-item-content {
+  display: block;
+}
+
+.company-list-item--inactive {
+}
+
+.company-list-item--inactive:hover {
+}
+
+.company-list-item--inactive .company-list-item-info {
+}
+
+.company-list-item--inactive .company-list-item-info-name,
+.company-list-item--inactive .company-list-item-info-location {
+  /* right: 1vw; */
+  right: 1.8vw;
+}
+
+/* .company-list-item-content {
   position: static;
   width: 100vw !important;
   border-left: none;
   border-top: solid 1px var(--black);
 }
 
-.companys-list-item-content-link {
+.company-list-item-content-link {
   background: var(--black);
   color: var(--white);
 }
 
-.companys-list-item--active {
+.company-list-item--active {
   height: auto;
   min-height: calc(100vh - 60px - 200px);
-}
+} */
