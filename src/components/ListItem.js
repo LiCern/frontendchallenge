@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem = ({ person, quantityActive, setQuantityActive }) => {
+const ListItem = ({ company, quantityActive, setQuantityActive }) => {
   const [localActive, setLocalActive] = React.useState(false);
   //this useEffect makes
   React.useEffect(() => {
@@ -30,10 +30,10 @@ const ListItem = ({ person, quantityActive, setQuantityActive }) => {
     >
       <div class="company-list-item-info" tabindex="0">
         <h3 class="company-list-item-info-name text-uppercase">
-          {person.company.name}
+          {company.company.name}
         </h3>
         <span class="company-list-item-info-location">
-          {person.address.city}
+          {company.address.city}
         </span>
       </div>
       <div class="company-list-item-content text-m">
@@ -52,24 +52,24 @@ const ListItem = ({ person, quantityActive, setQuantityActive }) => {
           {/* </div> */}
           <div class="company-list-item-content-main-text">
             <p>
-              {person.company.catchPhrase}
+              {company.company.catchPhrase}
               <br />
-              {person.company.name}'s specialty: {person.company.bs}
+              {company.company.name}'s specialty: {company.company.bs}
               <br />
               CONTACT:
-              {person.name}
-              {person.email}
-              {person.phone}
+              {company.name}
+              {company.email}
+              {company.phone}
             </p>
           </div>
         </div>
 
         <a
           class="company-list-item-content-link text-uppercase"
-          href={person.website}
+          href={company.website}
           target="_blank"
         >
-          {person.website}
+          {company.website}
         </a>
       </div>
     </div>
