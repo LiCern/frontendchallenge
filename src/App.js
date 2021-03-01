@@ -24,9 +24,9 @@ function App() {
   }, []);
 
   return (
-    <body className="body--home">
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <NavBar people={people} setDisplayData={setDisplayData} />
-      <section class="section company" id="company">
+      <div class="section company" id="company">
         <div class="company-list">
           {displayData.map((company) => {
             return (
@@ -38,8 +38,8 @@ function App() {
             );
           })}
         </div>
-      </section>
-    </body>
+      </div>
+    </div>
   );
 }
 

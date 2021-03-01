@@ -20,19 +20,17 @@ body {
   color: var(--black);
 }
 
-.section:first-of-type {
-  margin-top: 60px;
-}
-
 .section {
   border-bottom: solid 1px var(--black);
   display: block;
-  min-height: calc(100vh - 60px);
+  /* min-height: calc(100vh - 60px); */
   /* height: auto; */
   /* scroll-snap-align: start; */
   /* position: relative; */
   /* background: var(--white); */
-  scroll-margin-top: 60px;
+  /* scroll-margin-top: 60px; */
+  flex: 1;
+  flex-shrink: 1;
 }
 
 .text-uppercase {
@@ -53,47 +51,35 @@ body {
 
 /* SORTING BAR */
 
+h1 {
+  font-family: 'Libre Barcode 39 Text', cursive;
+  font-size: 6vw;
+}
+
 .nav {
   background: var(--white);
   border-bottom: solid 1px var(--black);
   display: flex;
-  flex-direction: row;
-  height: auto;
-  /* line-height: 60px; THINK ABOUT THIS*/
-  justify-content: flex-end;
-  position: fixed;
   top: 0;
-  width: 100%;
   z-index: 200;
+  max-height: calc(100vh / 8);
 }
-
-/* LOGO HERE if I want it */
-/* .nav-homelink {
-  margin-right: auto;
-  margin-left: 20px;
-}
-
-.nav-homelink img {
-  width: auto;
-  height: 25px;
-  margin-top: 17px;  
-} */
 
 .nav-btn {
-  background-color: blanchedalmond;
+  background-color: var(--white);
   border: 1px solid var(--black);
-  border-radius: 1em;
+  border-radius: 1rem;
   box-sizing: border-box;
   color: var(--black);
   display: inline-block;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  margin: 0 0.3em 0.3em 0;
-  /* margin-right: 20px; */
-  padding: 0.35em 1.2em;
+  margin: 0 0.3rem 0.3rem 0;
+  padding: 0.35rem 1.2rem;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s;
+  font-size: 1.2vw;
 }
 
 .nav-btn:hover {
@@ -102,11 +88,19 @@ body {
 }
 
 .nav-menu {
-  width: 50vw;
+  width: calc((100vw / 10) * 5);
   border-left: solid 1px var(--black);
   padding: 1vw 0 1vw 1vw;
+  display: flex;
+  flex-direction: column;
 }
 
+.nav-menu-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+}
 /* COMPANIES SECTION  */
 
 .company-list {
@@ -131,7 +125,7 @@ body {
   transform: rotate(180deg);
   writing-mode: vertical-lr;
   text-orientation: mixed;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 120px);
   padding: 20px 0 20px 0;
   font-size: 2.5vw;
   cursor: pointer;
@@ -175,7 +169,7 @@ body {
 } */
 
 .company-list-item-info-location {
-  padding-top: 60vh;
+  padding-top: 55vh;
   font-size: 2vw;
 }
 
@@ -249,6 +243,7 @@ body {
 
 .company-list-item--inactive {
   width: calc(30vw / 8);
+  display: flex;
   /* Somehow the right border gets overwritten at some point, why?  */
   border-left: solid 1px var(--black);
 }
