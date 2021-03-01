@@ -1,6 +1,5 @@
 import React from 'react';
 import SortButton from './SortButton';
-import logo from '../logo.png';
 
 const NavBar = ({ people, setDisplayData }) => {
   return (
@@ -8,7 +7,7 @@ const NavBar = ({ people, setDisplayData }) => {
       <h1>Kubrick Challenge</h1>
       <div className="nav-menu text-uppercase">
         <div className="nav-menu-row">
-          Sort:
+          Sort: &nbsp;
           <SortButton
             text="A-Z"
             onClick={() => {
@@ -37,7 +36,7 @@ const NavBar = ({ people, setDisplayData }) => {
           </SortButton>
         </div>
         <div className="nav-menu-row">
-          Filter by:
+          Filter by: &nbsp;
           <SortButton
             text="Northern hemisphere"
             onClick={() => {

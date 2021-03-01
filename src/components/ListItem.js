@@ -38,20 +38,22 @@ const ListItem = ({ company, quantityActive, setQuantityActive }) => {
       {localActive ? (
         <div class="company-list-item-content text-m">
           <div class="company-list-item-content-main">
-            <div class="company-list-item-content-main-text">
-              <p>
-                {company.company.catchPhrase}
-                <br />
-                {company.company.name}'s specialty: {company.company.bs}
-                <br />
-                CONTACT:
-                {company.name}
-                {company.email}
-                {company.phone}
-              </p>
+            <div class="text-uppercase">{company.company.catchPhrase}</div>
+
+            <div>
+              {company.company.name}'s specialty: {company.company.bs}
+            </div>
+
+            <div>
+              CONTACT:
+              <br />
+              {company.name}
+              <br />
+              {company.email}
+              <br />
+              {company.phone}
             </div>
           </div>
-
           <a
             class="company-list-item-content-link text-uppercase"
             href={company.website}
