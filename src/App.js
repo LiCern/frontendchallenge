@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import ListItem from './components/ListItem';
+import NavBar from './components/NavBar';
 
 function App() {
   const [people, setPeople] = React.useState([]);
@@ -24,53 +25,7 @@ function App() {
 
   return (
     <body className="body--home">
-      <button
-        onClick={() => {
-          const alphabetical = [...people];
-          alphabetical.sort((a, b) => {
-            return a.company.name
-              .toUpperCase()
-              .localeCompare(b.company.name.toUpperCase());
-          });
-          setDisplayData(alphabetical);
-        }}
-      >
-        A-Z
-      </button>
-      <button
-        onClick={() => {
-          console.log('FIred');
-          const reverseAlphabetical = [...people];
-          reverseAlphabetical.sort((a, b) => {
-            return b.company.name
-              .toUpperCase()
-              .localeCompare(a.company.name.toUpperCase());
-          });
-          setDisplayData(reverseAlphabetical);
-        }}
-      >
-        Z-A
-      </button>
-      <button
-        onClick={() => {
-          const northern = people.filter(
-            (company) => parseFloat(company.address.geo.lat) >= 0
-          );
-          setDisplayData(northern);
-        }}
-      >
-        Northern hemisphere
-      </button>
-      <button
-        onClick={() => {
-          const southern = people.filter(
-            (company) => parseFloat(company.address.geo.lat) < 0
-          );
-          setDisplayData(southern);
-        }}
-      >
-        Southern hemisphere
-      </button>
+      <NavBar people={people} setDisplayData={setDisplayData} />
       <section class="section company" id="company">
         <div class="company-list">
           {displayData.map((company) => {
