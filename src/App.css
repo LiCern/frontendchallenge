@@ -49,6 +49,60 @@ body {
   margin-bottom: 2rem;
 }
 
+/* SORTING BAR */
+
+.nav {
+  border-bottom: solid 1px var(--black);
+  height: 1vh;
+  line-height: 60px;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background: var(--white);
+  z-index: 200;
+  top: 0;
+}
+
+/* LOGO HERE if I want it */
+/* .nav-homelink {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.nav-homelink img {
+  width: auto;
+  height: 25px;
+  margin-top: 17px;  
+} */
+
+.nav-btn {
+  background-color: blanchedalmond;
+  border: 0.1em solid #ffffff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: var(--black);
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0 0.3em 0.3em 0;
+  /* margin-right: 20px; */
+  padding: 0.35em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-btn--active {
+  border-bottom: solid 2px var(--black);
+}
+
+.nav-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+/* COMPANIES SECTION  */
+
 .company-list {
   display: flex;
 }
@@ -242,3 +296,35 @@ body {
   height: auto;
   min-height: calc(100vh - 60px - 200px);
 } */
+
+.company-list-item {
+  width: calc(100vw / 10);
+}
+
+.company-list-item-info {
+  width: calc(100vw / 10);
+}
+
+.company-list-item--active {
+  width: 70vw;
+}
+
+.company-list-item--inactive {
+  width: calc(30vw / 9);
+}
+
+.company-list-item--inactive:hover {
+  width: calc(100vw / 10 - 4vw);
+}
+
+.company-list-item-content {
+  width: calc(70vw - (100vw / 10));
+  left: calc(100vw / 10);
+}
+
+/* to do:
+-style navbar
+-remove leftside margin on first button 
+-add black border on last column
+-check division of space  
+-rename colours*/

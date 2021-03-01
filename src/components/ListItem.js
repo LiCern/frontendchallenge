@@ -2,7 +2,6 @@ import React from 'react';
 
 const ListItem = ({ company, quantityActive, setQuantityActive }) => {
   const [localActive, setLocalActive] = React.useState(false);
-  //this useEffect makes
   React.useEffect(() => {
     //every ListItem goes through this when quantityActive changes
     if (localActive) {

@@ -5,6 +5,7 @@ const NavBar = ({ people, setDisplayData }) => {
   return (
     <nav className="nav text-m">
       <div className="nav-menu text-uppercase">
+        Sort companies by:
         <SortButton
           text="A-Z"
           onClick={() => {
@@ -32,7 +33,7 @@ const NavBar = ({ people, setDisplayData }) => {
           Z-A
         </SortButton>
         <SortButton
-          text="Norther hemisphere"
+          text="Northern hemisphere"
           onClick={() => {
             const northern = people.filter(
               (company) => parseFloat(company.address.geo.lat) >= 0
