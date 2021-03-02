@@ -178,6 +178,8 @@ h1 {
   height: 100%;
 }
 
+/* TRANSITIONS WHEN ONE LISTITEM IS OPEN */
+
 .company-list-item--inactive .company-list-item-info {
   border-right: solid 1px var(--black);
 }

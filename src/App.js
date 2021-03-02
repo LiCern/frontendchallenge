@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div>
       <NavBar people={people} setDisplayData={setDisplayData} />
       <div class="section company" id="company">
         <div class="company-list">
