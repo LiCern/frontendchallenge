@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
-  font-size: 100%;
   font: inherit;
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
@@ -22,7 +20,7 @@ body {
   text-transform: uppercase;
 }
 
-/* SORTING BAR */
+/* NAV BAR */
 
 h1 {
   font-family: 'Libre Barcode 39 Text', cursive;
@@ -33,9 +31,9 @@ h1 {
   background: var(--white);
   border-bottom: solid 1px var(--black);
   display: flex;
+  max-height: calc(100vh / 8);
   top: 0;
   z-index: 200;
-  max-height: calc(100vh / 8);
 }
 
 .nav-btn {
@@ -46,13 +44,13 @@ h1 {
   color: var(--black);
   display: inline-block;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.2vw;
   font-weight: 300;
   margin: 0 0.3rem 0.3rem 0;
   padding: 0.35rem 1.2rem;
   text-align: center;
   text-decoration: none;
   transition: all 0.2s;
-  font-size: 1.2vw;
 }
 
 .nav-btn:hover {
@@ -61,19 +59,20 @@ h1 {
 }
 
 .nav-menu {
-  width: calc((100vw / 10) * 5);
   border-left: solid 1px var(--black);
-  padding: 1vw 0 1vw 1vw;
   display: flex;
   flex-direction: column;
+  padding: 1vw 0 1vw 1vw;
+  width: calc((100vw / 10) * 5);
 }
 
 .nav-menu-row {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   font-size: 1.2vw;
+  justify-content: center;
 }
+
 /* COMPANIES SECTION  */
 
 .company-list {
@@ -85,6 +84,21 @@ h1 {
   overflow-x: hidden;
   position: relative;
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  width: calc(100vw / 10);
+}
+
+.company-list-item-info {
+  background: var(--white);
+  cursor: pointer;
+  font-size: 2.5vw;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+  padding: 20px 0 20px 0;
+  position: relative;
+  transform: rotate(180deg);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  width: calc(100vw / 10);
+  writing-mode: vertical-lr;
 }
 
 .company-list-item-info:hover,
@@ -94,21 +108,6 @@ h1 {
   color: var(--white);
 }
 
-.company-list-item-info {
-  transform: rotate(180deg);
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-  height: calc(100vh - 120px);
-  padding: 20px 0 20px 0;
-  font-size: 2.5vw;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  background: var(--white);
-  width: calc(100vw / 10);
-}
-
 .company-list-item:not(.company-list-item--inactive)
   .company-list-item-info:hover
   .company-list-item-info-name,
@@ -116,40 +115,42 @@ h1 {
   margin-top: 100px;
 }
 
+.company-list-item-info-location {
+  font-size: 2vw;
+  padding-top: 55vh;
+}
+
 .company-list-item-info-name {
   position: absolute;
-  top: 2vh;
   right: 3.3vw;
+  top: 2vh;
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.company-list-item-info-location {
-  padding-top: 55vh;
-  font-size: 2vw;
-}
+/* COMPANIES OPEN VIEW */
 
-.company-list-item-info-name,
-.company-list-item-info-location {
-  font-weight: 500;
+.company-list-item-content {
+  width: calc(70vw - (100vw / 10));
+  left: calc(100vw / 10);
 }
 
 .company-list-item-content-main {
-  height: calc(100% - 8vh);
-  overflow: auto;
-
-  font-size: 3vw;
+  font-size: 2vw;
   display: flex;
   flex-direction: column;
+  height: calc(100% - 8vh);
   justify-content: space-evenly;
+  overflow: auto;
 }
 
 .company-list-item-content-main div {
-  border-bottom: solid 1px black;
-  text-align: center;
-  justify-content: center;
-  padding-bottom: 6vh;
+  border-bottom: solid 1px var(--black);
   font-family: 'Roboto Mono', monospace;
   font-weight: 100;
+  justify-content: center;
+  padding-bottom: 6vh;
+  padding: auto 2%;
+  text-align: center;
 }
 
 .company-list-item-content-main div:last-of-type {
@@ -157,12 +158,12 @@ h1 {
 }
 
 .company-list-item-content-link {
-  color: black;
-  font-size: 2rem;
-  padding: 0rem 2rem 0.5rem 2rem;
   border-top: solid 1px var(--black);
+  color: var(--black);
   display: block;
+  font-size: 2rem;
   line-height: 7.5vh;
+  padding: 0rem 2rem 0.5rem 2rem;
   transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -178,20 +179,12 @@ h1 {
 }
 
 .company-list-item--inactive .company-list-item-info {
-  border-right: solid 1px black;
+  border-right: solid 1px var(--black);
 }
 
 .company-list-item--inactive .company-list-item-info-name,
 .company-list-item--inactive .company-list-item-info-location {
   right: 1.8vw;
-}
-
-.company-list-item {
-  width: calc(100vw / 10);
-}
-
-.company-list-item-info {
-  width: calc(100vw / 10);
 }
 
 .company-list-item--active {
@@ -206,9 +199,4 @@ h1 {
 
 .company-list-item--inactive:hover {
   width: calc(100vw / 10 - 4vw);
-}
-
-.company-list-item-content {
-  width: calc(70vw - (100vw / 10));
-  left: calc(100vw / 10);
 }
